@@ -1,4 +1,4 @@
-# MoosePlum Date-Time Operations
+# MoosePlum Sticky Headers
 
 This is a really simple sticky header script. All it does, **ALL** it does, is stop an element when it reaches the top of the page and sticks it there.
 
