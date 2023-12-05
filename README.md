@@ -1,6 +1,6 @@
 # MoosePlum Sticky Headers
 
-This is a really simple sticky header script. All it does, **ALL** it does, is stop an element when it reaches the top of the page and sticks it there.
+This is a really simple sticky header script. All it does, **THE ONLY THING** it does is stop an element when it reaches the top of the page and sticks it there.
 
 It does give you the option to stack them one below the next or to layer them all at the top, so that is something.
 
@@ -23,20 +23,54 @@ The files in this set are as follows:
 | mpc_sticky.min.js   | Minified version.
 | _invoke.js          | Example implementation code.
 
-## Recommended HTML Code
-
-Use a &lt;div /&gt; element, since it is easier to manage margins on without messing up the contents.
-
-Add a class to mark the next immediate element, just so you know what it is.
-
-```html
-<div class="sticky"><h2>Some Header</h2></div>
-<p class="post-sticky">Some post sticky content.</p>
-```
 
 ## Implementation
 
-To use you must have you CSS set up to deal with z-indexing with a class of `locked` being placed above other elements.
+### Assumptions
+
+Fixed and positoned elements have a higher stacking order. If there are other positioned elements on the page, remember to use z-index to keep fixed elements on top of others. Recommended z-index for `fixed` is `sticky`+1.
+
+The script adjusts the top margin on the element following the sticky element to prevent scroll jump. To avoid problems with olders browsers, remember to set a top margin in the CSS for the post-sticky elements.
+
+The sticky element should have a top margin of zero. The script does **NOT** set/unset the position property in CSS. This should be done manually for the `fixed` class. If using "stack" instead of layer, the script will set the top position for all subsequent fixed elements to the sum of heights of the previous fixed elements.
+
+Sticky elements should have an opaque background because other content will be passing behind them on scroll.
+
+### Recommended HTML Code
+
+Use a &lt;div /&gt; element to make it easier to manage margins without messing up the contents.
+
+Add a class to mark the next immediate element. The script grabs the next programmatically, but it is nice to have self-documenting page elements.
+
+```html
+<div class="sticky"><h2>Some Header</h2></div>
+<div class="post-sticky">
+  <p>Some post sticky content.</p>
+</div>
+```
+### Recommended CSS
+
+Set appropriate `z-index` and `margin-top` values for the impacted elements.
+
+Set the CSS for the `locked` class to position fixed with a top of zero.
+
+```css
+.sticky {
+  z-index   : _stickyZidx_;
+  margin    : 0;
+  ⋮
+}
+.sticky.locked {
+  position  : fixed;
+  top       : 0px;
+  z-index   : _stickyZidx_ + 1;
+  ⋮
+}
+.post-sticky {
+  margin-top: 1.0em;
+  ⋮
+}
+```
 
 ### Parameters
 

@@ -1,14 +1,16 @@
-/*! --- Sticky Elements ------------------------------------------------------- *
+/** --- Sticky Elements ------------------------------------------------------- *
  * mpc_sticky 1.0.0
- * Copyright (c) 2023 Mootly Obviate -- See /LICENSE.md
+ * @copyright 2017-2023 Mootly Obviate -- See /LICENSE.md
+ * @license   MIT
+ * @version   1.0.0
  * ---------------------------------------------------------------------------- *
  * Lock selected elements to the top of the page on scroll.
  * ---------------------------------------------------------------------------- *
  * To use, create listeners for: load, scroll
  * Constructor arguments:
- *   pAuto    : boolean : Whether to add listeners automatically
- *   pBox     : class   : Element(s) to lock
- *   pMethod  : string  : Way in which to deal with multiple sticky elements
+ * pAuto      : boolean   : Whether to add listeners automatically.
+ * pBox       : class     : Element(s) to lock.
+ * pMethod    : string    : Way in which to deal with multiple sticky elements.
  *
  * Possible values for pMethod:
  *   stack    : Stack fixed elements down the page (default)
@@ -23,7 +25,10 @@
  *   - a class for our fixed elements: .fixed-top
  *   - a style for elements to clear them: margin-top: offset.
  *   Sticky elements should have opaque background since things run under them.
- *
+ *   Fixed/positoned elements have a higher stacking order.
+ *   If there are other positioned elements on the page, remember to use z-index
+ *   to keep fixed elements on top of others.
+*
  * *** Initialize - Example --------------------------------------------------- *
  * Need both load and scroll listeners
  * let mp = {
@@ -33,7 +38,7 @@
  * window.addEventListener('load', (e) => { mp.sticky.stickybox(););
  * window.addEventListener('scroll', (e) => { mp.sticky.stickybox(););
  * --- Revision History ------------------------------------------------------- *
- * 2023-11-27 | New TypeScript-compliant version
+ * 2023-12-04 | Version 1.0.0 done.
  * ---------------------------------------------------------------------------- */
 class mpc_sticky {
   constructor(pAuto = true, pBox = 'sticky', pMethod = 'layer') {
