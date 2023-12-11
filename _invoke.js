@@ -7,7 +7,7 @@
 const sticky_class  = '.sticky';
 const sticky_method = 'stack';
 const sticky_auto   = true;
-// All scripts in the mp namespace to avoid collisions.     *
+                    // All scripts in the mp namespace to avoid collisions.     *
  let mp = {
   sticky: new mpc_sticky(sticky_auto, sticky_class, sticky_method),
 // ...

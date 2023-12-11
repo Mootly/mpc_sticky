@@ -23,7 +23,6 @@ The files in this set are as follows:
 | mpc_sticky.min.js   | Minified version.
 | _invoke.js          | Example implementation code.
 
-
 ## Implementation
 
 ### Assumptions
@@ -48,6 +47,7 @@ Add a class to mark the next immediate element. The script grabs the next progra
   <p>Some post sticky content.</p>
 </div>
 ```
+
 ### Recommended CSS
 
 Set appropriate `z-index` and `margin-top` values for the impacted elements.
@@ -78,7 +78,7 @@ Set the CSS for the `locked` class to position fixed with a top of zero.
 | ----------  | ----------  | ----------  | ----------
 | pBox        | string      | sticky      | Class of sticky slements.
 | pMethod     | string      | stack       | Whether to stack or layer.
-| pAuto       | boolean     | true        | Whether to auto-create listeners.
+| pAuto       | boolean     | true        | Whether to automatically create listeners.
 
 ### Coding Example
 
@@ -98,6 +98,6 @@ let mp = {
 If auto is set to false, manually invoke the listeners.
 
 ```js
-window.addEventListener('load', (e) => { mp.sticky.stickybox(););
-window.addEventListener('scroll', (e) => { mp.sticky.stickybox(););
+window.addEventListener('load', (e) => { mp.sticky.stickybox(); });
+window.addEventListener('scroll', (e) => { mp.sticky.stickybox(); });
 ```
