@@ -10,7 +10,7 @@ Written for ES6.
 
 This was written in TypeScript and exported to ES6 to allow support for browsers not yet up to the most recent ECMAScript standards.
 
-## Contents
+## Assets
 
 The files in this set are as follows:
 
@@ -24,7 +24,13 @@ The files in this set are as follows:
 | mpc_sticky.min.js.map   | Map file.
 | _invoke.js              | Example implementation code.
 
-## Implementation
+## Installation
+
+Download this repo, or just the script, and add it to the script library for your site.
+
+This script has no external dependencies.
+
+## Configuration
 
 ### Assumptions
 
