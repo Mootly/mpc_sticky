@@ -1,6 +1,6 @@
 /** --- Sticky Elements ------------------------------------------------------- *
  * mpc_sticky 1.0.0
- * @copyright 2017-2022 Mootly Obviate -- See /LICENSE.md
+ * @copyright 2017-2023 Mootly Obviate -- See /LICENSE.md
  * @license   MIT
  * @version   1.0.0
  * ---------------------------------------------------------------------------- *
