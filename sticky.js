@@ -43,7 +43,7 @@
 class mpc_sticky {
   constructor(pAuto = true, pBox = 'sticky', pMethod = 'layer') {
                     // Make sure we have a class and not just a string          *
-    if (!pBox[0].startsWith('.')) { pBox = '.' + pBox; }
+    if (!pBox.startsWith('.')) { pBox = '.' + pBox; }
     this.box        = document.querySelectorAll(pBox);
     this.allowedMethods = ['stack', 'layer' /*, 'push'*/];
     this.method     = this.allowedMethods.includes(pMethod) ? pMethod : 'stack';
