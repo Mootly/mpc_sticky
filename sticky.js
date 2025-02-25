@@ -28,7 +28,7 @@
  *   Fixed/positoned elements have a higher stacking order.
  *   If there are other positioned elements on the page, remember to use z-index
  *   to keep fixed elements on top of others.
-*
+ *
  * *** Initialize - Example --------------------------------------------------- *
  * Need both load and scroll listeners
  * let mp = {
@@ -43,40 +43,43 @@
 class mpc_sticky {
   constructor(pAuto = true, pBox = 'sticky', pMethod = 'layer') {
                     // Make sure we have a class and not just a string          *
-    if (!pBox.startsWith('.')) { pBox = '.' + pBox; }
-    this.box        = document.querySelectorAll(pBox);
+    if (!pBox.startsWith('.')) {
+      pBox = '.' + pBox;
+    }
+    this.box = document.querySelectorAll(pBox);
     this.allowedMethods = ['stack', 'layer' /*, 'push'*/];
-    this.method     = this.allowedMethods.includes(pMethod) ? pMethod : 'stack';
-                    // Init our arrays                                          *
-    this.next       = [];
-    this.nextTop    = [];
-    this.position   = [];
-    this.offset     = [];
-    this.totOffset  = [];
-    this.elTop      = [];
+    this.method = this.allowedMethods.includes(pMethod) ? pMethod : 'stack';
+    // Init our arrays                                          *
+    this.next = [];
+    this.nextTop = [];
+    this.position = [];
+    this.offset = [];
+    this.totOffset = [];
+    this.elTop = [];
                     // Iterator is nodelist of stickies.                        *
     this.box.forEach((el, key) => {
       this.offset[key] = el.offsetHeight;
-      // Stack needs sum of all previous sticky element heights.  *
+                    // Stack needs sum of all previous sticky element heights.  *
       if (this.method == 'stack') {
         this.totOffset[key] = (this.offset[key - 1])
-                    ? this.offset[key - 1] + this.totOffset[key - 1]
-                    : 0;
-      } else {
+          ? this.offset[key - 1] + this.totOffset[key - 1]
+          : 0;
+      }
+      else {
         this.totOffset[key] = 0;
       }
       this.position[key] = el.getBoundingClientRect().top + window.scrollY - this.totOffset[key];
       this.next[key] = el.nextElementSibling || false;
       this.nextTop[key] = (this.next[key])
-                    ? parseFloat(window.getComputedStyle(this.next[key]).marginTop)
-                    : 0;
+        ? parseFloat(window.getComputedStyle(this.next[key]).marginTop)
+        : 0;
       this.nextTop[key] = this.nextTop[key] + this.offset[key];
     });
     if (pAuto) {
       window.addEventListener('load', (el) => { this.stickybox(); });
       window.addEventListener('scroll', (el) => { this.stickybox(); });
     }
-}
+  }
                     // Stickybox method used by event listeners.                *
                     // Iterator is element position array.                      *
   stickybox() {
@@ -85,17 +88,19 @@ class mpc_sticky {
       if (this.offset[key - 1]) {
         this.elTop[key] -= this.offset[key - 1];
       }
-      if (this.elTop[key] < 1) { // lock position                        *
+      if (this.elTop[key] < 1) {        // lock position                        *
         this.box[key].classList.add('locked');
         if (this.method == 'stack') {
           this.box[key].style.top = (this.totOffset[key]) + 'px';
-        } else {
+        }
+        else {
           this.box[key].style.top = '0';
         }
         if (this.next[key]) {
           this.next[key].style.marginTop = this.nextTop[key] + 'px';
         }
-      } else { // unlock position                      *
+      }
+      else {        // unlock position                                          *
         this.box[key].classList.remove('locked');
         if (this.next[key]) {
           this.next[key].style.marginTop = null;

@@ -14,21 +14,28 @@ This was written in TypeScript and exported to ES6 to allow support for browsers
 
 The files in this set are as follows:
 
-| path                    | description
-| ------------            | ------------
-| LICENSE.md              | License notice ( [MIT](https://mit-license.org) ).
-| README.md               | This document.
-| mpc_sticky.ts           | The class definition in TypeScript.
-| mpc_sticky.js           | The class definition in ES6.
-| mpc_sticky.min.js       | Minified version.
-| mpc_sticky.min.js.map   | Map file.
-| _invoke.js              | Example implementation code.
+| path                  | description                                        |
+| --------------------- | -------------------------------------------------- |
+| LICENSE.md            | License notice ( [MIT](https://mit-license.org) ). |
+| README.md             | This document.                                     |
+| mpc_sticky.ts         | The class definition in TypeScript.                |
+| mpc_sticky.js         | The class definition in ES6.                       |
+| mpc_sticky.min.js     | Minified version.                                  |
+| mpc_sticky.min.js.map | Map file.                                          |
+| tsconfig.json         | Example TS > ES 6 config setting.                  |
+| _invoke.js            | Example implementation code.                       |
 
 ## Installation
 
 Download this repo, or just the script, and add it to the script library for your site.
 
 This script has no external dependencies.
+
+### Compiling from the TypeScript
+
+To save to ES6 in the current folder, assuming you have the correct libraries installed, run the following in this folder:
+
+`tsc -p tsconfig.json`
 
 ## Configuration
 
@@ -38,7 +45,7 @@ Fixed and positoned elements have a higher stacking order. If there are other po
 
 The script adjusts the top margin on the element following the sticky element to prevent scroll jump. To avoid problems with olders browsers, remember to set a top margin in the CSS for the post-sticky elements.
 
-The sticky element should have a top margin of zero. The script does **NOT** set/unset the position property in CSS. This should be done manually for the `fixed` class. If using "stack" instead of layer, the script will set the top position for all subsequent fixed elements to the sum of heights of the previous fixed elements.
+The sticky element should have a top margin of zero. The script does **NOT** set/unset the position property in CSS. This coded into the CSS for the `fixed` class. If using "stack" instead of layer, the script will set the top position for all subsequent fixed elements to the sum of heights of the previous fixed elements.
 
 Sticky elements should have an opaque background because other content will be passing behind them on scroll.
 
