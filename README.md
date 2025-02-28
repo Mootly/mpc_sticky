@@ -6,9 +6,7 @@ It does give you the option to stack them one below the next or to layer them al
 
 ## Dependencies
 
-Written for ES6.
-
-This was written in TypeScript and exported to ES6 to allow support for browsers not yet up to the most recent ECMAScript standards.
+This was written in TypeScript and exported to ES2020.
 
 ## Assets
 
@@ -22,7 +20,7 @@ The files in this set are as follows:
 | mpc_sticky.js         | The class definition in ES6.                       |
 | mpc_sticky.min.js     | Minified version.                                  |
 | mpc_sticky.min.js.map | Map file.                                          |
-| tsconfig.json         | Example TS > ES 6 config setting.                  |
+| tsconfig.json         | Example TS > ES2020 config setting.                |
 | _invoke.js            | Example implementation code.                       |
 
 ## Installation
@@ -33,7 +31,7 @@ This script has no external dependencies.
 
 ### Compiling from the TypeScript
 
-To save to ES6 in the current folder, assuming you have the correct libraries installed, run the following in this folder:
+To save to ES2020 in the current folder, assuming you have the correct libraries installed, run the following in this folder:
 
 `tsc -p tsconfig.json`
 
