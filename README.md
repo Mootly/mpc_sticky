@@ -12,16 +12,16 @@ This was written in TypeScript and exported to ES2020.
 
 The files in this set are as follows:
 
-| path                  | description                                        |
-| --------------------- | -------------------------------------------------- |
-| LICENSE.md            | License notice ( [MIT](https://mit-license.org) ). |
-| README.md             | This document.                                     |
-| mpc_sticky.ts         | The class definition in TypeScript.                |
-| mpc_sticky.js         | The class definition in ES6.                       |
-| mpc_sticky.min.js     | Minified version.                                  |
-| mpc_sticky.min.js.map | Map file.                                          |
-| tsconfig.json         | Example TS > ES2020 config setting.                |
-| _invoke.js            | Example implementation code.                       |
+| path              | description                                        |
+| ----------------- | -------------------------------------------------- |
+| LICENSE.md        | License notice ( [MIT](https://mit-license.org) ). |
+| README.md         | This document.                                     |
+| sticky.ts         | The class definition in TypeScript.                |
+| sticky.js         | The class definition in ES6.                       |
+| sticky.min.js     | Minified version.                                  |
+| sticky.min.js.map | Map file.                                          |
+| tsconfig.json     | Example TS > ES2020 config setting.                |
+| _invoke.js        | Example implementation code.                       |
 
 ## Installation
 
