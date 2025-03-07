@@ -86,11 +86,11 @@ Set the CSS for the `locked` class to position fixed with a top of zero.
 
 ### Parameters
 
-| name        | type        | default     | description
-| ----------  | ----------  | ----------  | ----------
-| pBox        | string      | sticky      | Class of sticky slements.
-| pMethod     | string      | stack       | Whether to stack or layer.
-| pAuto       | boolean     | true        | Whether to automatically create listeners.
+| name    | type    | default | description                                |
+| ------- | ------- | ------- | ------------------------------------------ |
+| pBox    | string  | sticky  | Class of sticky slements.                  |
+| pMethod | string  | stack   | Whether to stack or layer.                 |
+| pAuto   | boolean | true    | Whether to automatically create listeners. |
 
 ### Coding Example
 
