@@ -1,5 +1,7 @@
 # MoosePlum Sticky Headers
 
+Repo: [Mootly/mpc_sticky](https://github.com/Mootly/mpc_sticky)
+
 This is a really simple sticky header script. All it does, **THE ONLY THING** it does is stop an element when it reaches the top of the page and sticks it there.
 
 It does give you the option to stack them one below the next or to layer them all at the top, so that is something.
@@ -14,6 +16,7 @@ The files in this set are as follows:
 
 | path              | description                                        |
 | ----------------- | -------------------------------------------------- |
+| CHANGELOG.md      | The changelog for this page layout utility.        |
 | LICENSE.md        | License notice ( [MIT](https://mit-license.org) ). |
 | README.md         | This document.                                     |
 | sticky.ts         | The class definition in TypeScript.                |
